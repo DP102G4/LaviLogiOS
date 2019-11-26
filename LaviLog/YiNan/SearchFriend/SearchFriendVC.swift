@@ -26,7 +26,15 @@ class SearchFriendVC: UIViewController, UISearchBarDelegate {
         
         // Do any additional setup after loading the view.
         friends = getFriends()
+        
+        /* 取用editButtonItem會回傳Edit/Done自動切換的按鈕。點擊Edit按鈕會呼叫viewController.setEditing(Bool, Bool)，也可自訂按鈕，點擊後呼叫setEditing(true, animated: true)以達到同樣效果，結束時呼叫setEditing(false, animated: true) */
+        navigationItem.rightBarButtonItem = editButtonItem
+        // editButtonItem = 系統常數 不能隨便命名
+        // leftBarButtonItem = 左邊
+        // rightBarButtonItem = 右邊
     }
+    
+    
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let text = searchBar.text ?? ""
@@ -48,26 +56,15 @@ class SearchFriendVC: UIViewController, UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
     
+    
+    
     // 取得測試資料
     func getFriends() -> [Friend] {
         var friends = [Friend]()
-        friends.append(Friend(image: UIImage(named: "ios")!, name: "ios"))
-        friends.append(Friend(image: UIImage(named: "swift")!, name: "Swift"))
+        friends.append(Friend(image: UIImage(named: "ios")!, name: "蔡英文"))
+        friends.append(Friend(image: UIImage(named: "swift")!, name: "韓國瑜"))
         return friends
     }
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 extension SearchFriendVC: UITableViewDataSource, UITableViewDelegate {
@@ -96,9 +93,49 @@ extension SearchFriendVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         /* Identifier必須設定與Indentity inspector的Storyboard ID相同 */
-        let SearchFriendResultVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchFriendResultVC") as! SearchFriendResultVC
+        let searchFriendResultVC = self.storyboard?.instantiateViewController(withIdentifier: "searchFriendResultVC") as! SearchFriendResultVC
         let friend = friends[indexPath.row]
-        SearchFriendResultVC.friend = friend
-        self.navigationController?.pushViewController(SearchFriendResultVC, animated: true)
+        searchFriendResultVC.friend = friend
+        self.navigationController?.pushViewController(searchFriendResultVC, animated: true)
     }
+    
+    /* 設定可否編輯資料列 */
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+         if indexPath.row == 1{
+             return false
+         }
+         //使第二個資料無法修改
+        
+        return true
+    }
+    
+    /* 修改確定後，判斷編輯模式並作出回應 */
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // 按下Delete按鈕
+        if editingStyle == .delete {
+            friends.remove(at: indexPath.row)
+            /* 提供array，儲存著欲刪除資料的indexPath。如果只刪除一筆資料，array內存放一個indexPath元素即可 */
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    /* 設定可否移動資料列 */
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    /* 指定資料列從來源位置移動到目的位置 */
+    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        let friend = friends[fromIndexPath.row]
+        /* 必須先移除後新增資料，順序不可顛倒 */
+        friends.remove(at: fromIndexPath.row) // 不是移除資料 是移除參數
+        friends.insert(friend, at: to.row) // 參照移到另一個位子
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
 }

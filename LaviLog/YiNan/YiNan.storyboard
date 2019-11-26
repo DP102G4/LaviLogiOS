@@ -27,7 +27,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="NTm-Gl-Sai" kind="show" id="0Xc-cY-1BM"/>
+                                    <segue destination="NTm-Gl-Sai" kind="show" id="Ce6-4p-iFA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRv-dX-rM5">
@@ -121,30 +121,46 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="請輸入好友的名稱進行搜尋" translatesAutoresizingMaskIntoConstraints="NO" id="sRd-IR-DmQ">
+                                <rect key="frame" x="0.0" y="132" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NTm-Gl-Sai" id="LQB-4a-w8b"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-G6-SSy">
                                 <rect key="frame" x="0.0" y="176" width="414" height="720"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="321" id="V2z-64-cWP" customClass="FriendCell" customModule="LaviLog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="321"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="105" id="V2z-64-cWP" customClass="FriendCell" customModule="LaviLog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V2z-64-cWP" id="kuh-Yp-hlm">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="321"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w3G-yw-aW1">
-                                                    <rect key="frame" x="20" y="15" width="100" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w3G-yw-aW1">
+                                                    <rect key="frame" x="31" y="21" width="70" height="63"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="yrl-af-2Ph"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrd-WI-6yY">
-                                                    <rect key="frame" x="186" y="55" width="45" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrd-WI-6yY">
+                                                    <rect key="frame" x="132" y="41" width="45" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="w3G-yw-aW1" firstAttribute="leading" secondItem="kuh-Yp-hlm" secondAttribute="leadingMargin" constant="11" id="2X8-hu-X5N"/>
+                                                <constraint firstItem="w3G-yw-aW1" firstAttribute="top" secondItem="kuh-Yp-hlm" secondAttribute="topMargin" constant="10" id="FZQ-0O-7Ch"/>
+                                                <constraint firstItem="w3G-yw-aW1" firstAttribute="centerY" secondItem="kuh-Yp-hlm" secondAttribute="centerY" id="NMI-fR-zaD"/>
+                                                <constraint firstItem="Qrd-WI-6yY" firstAttribute="top" secondItem="kuh-Yp-hlm" secondAttribute="topMargin" constant="30" id="fiU-h6-wjb"/>
+                                                <constraint firstItem="Qrd-WI-6yY" firstAttribute="leading" secondItem="w3G-yw-aW1" secondAttribute="trailing" constant="31" id="nqZ-zj-4qK"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ivFriend" destination="w3G-yw-aW1" id="InN-Oo-k7f"/>
@@ -157,14 +173,6 @@
                                     <outlet property="delegate" destination="NTm-Gl-Sai" id="mee-MU-nJG"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="請輸入好友的名稱進行搜尋" translatesAutoresizingMaskIntoConstraints="NO" id="sRd-IR-DmQ">
-                                <rect key="frame" x="0.0" y="132" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="NTm-Gl-Sai" id="LQB-4a-w8b"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="CWY-bC-gee"/>
@@ -179,36 +187,42 @@
             </objects>
             <point key="canvasLocation" x="1882.608695652174" y="-933.48214285714278"/>
         </scene>
-        <!--Search Friend ResultVC-->
+        <!--觀看好友日誌-->
         <scene sceneID="tqO-wF-r6Z">
             <objects>
-                <viewController id="k8u-70-aNZ" customClass="SearchFriendResultVC" customModule="LaviLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchFriendResultVC" id="k8u-70-aNZ" customClass="SearchFriendResultVC" customModule="LaviLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="24M-Wi-hXQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0n3-An-dO0">
-                                <rect key="frame" x="20" y="433" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.76078431372549016" green="0.9882352941176471" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ahb-Cv-hCd">
-                                <rect key="frame" x="87" y="140" width="240" height="128"/>
+                                <rect key="frame" x="157" y="183" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82k-3Z-zRA">
-                                <rect key="frame" x="186" y="324" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82k-3Z-zRA">
+                                <rect key="frame" x="20" y="324" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0n3-An-dO0">
+                                <rect key="frame" x="20" y="418" width="374" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.76078431372549016" green="0.9882352941176471" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="觀看好友日誌"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ifA-Fg-0yy"/>
                     </view>
+                    <navigationItem key="navigationItem" title="觀看好友日誌" id="brA-ff-fRm"/>
                     <connections>
                         <outlet property="ivFriend" destination="ahb-Cv-hCd" id="UAv-QJ-Hwn"/>
                         <outlet property="lbFriend" destination="82k-3Z-zRA" id="afT-dR-e9i"/>
