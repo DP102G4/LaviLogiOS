@@ -28,7 +28,7 @@ class SearchFriendVC: UIViewController, UISearchBarDelegate {
         friends = getFriends()
         
         /* 取用editButtonItem會回傳Edit/Done自動切換的按鈕。點擊Edit按鈕會呼叫viewController.setEditing(Bool, Bool)，也可自訂按鈕，點擊後呼叫setEditing(true, animated: true)以達到同樣效果，結束時呼叫setEditing(false, animated: true) */
-        navigationItem.rightBarButtonItem = editButtonItem
+//        navigationItem.rightBarButtonItem = editButtonItem
         // editButtonItem = 系統常數 不能隨便命名
         // leftBarButtonItem = 左邊
         // rightBarButtonItem = 右邊
@@ -102,10 +102,10 @@ extension SearchFriendVC: UITableViewDataSource, UITableViewDelegate {
     /* 設定可否編輯資料列 */
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         
-         if indexPath.row == 1{
-             return false
-         }
-         //使第二個資料無法修改
+//         if indexPath.row == 1{
+//             return false
+//         }
+//         //使第二個資料無法修改
         
         return true
     }
@@ -120,22 +120,22 @@ extension SearchFriendVC: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    /* 設定可否移動資料列 */
-    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    /* 指定資料列從來源位置移動到目的位置 */
-    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        let friend = friends[fromIndexPath.row]
-        /* 必須先移除後新增資料，順序不可顛倒 */
-        friends.remove(at: fromIndexPath.row) // 不是移除資料 是移除參數
-        friends.insert(friend, at: to.row) // 參照移到另一個位子
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    /* 設定可否移動資料列 */
+//    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+//
+//    /* 指定資料列從來源位置移動到目的位置 */
+//    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+//        let friend = friends[fromIndexPath.row]
+//        /* 必須先移除後新增資料，順序不可顛倒 */
+//        friends.remove(at: fromIndexPath.row) // 不是移除資料 是移除參數
+//        friends.insert(friend, at: to.row) // 參照移到另一個位子
+//    }
+//
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
     
     
 }

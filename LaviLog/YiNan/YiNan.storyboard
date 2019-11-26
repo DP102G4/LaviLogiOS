@@ -389,7 +389,7 @@
                         <viewLayoutGuide key="safeArea" id="BKW-fS-bIi"/>
                     </view>
                     <navigationItem key="navigationItem" title="QRCode" id="bWz-t2-hk6">
-                        <barButtonItem key="rightBarButtonItem" title="Clear QRCode" id="wSi-qs-9j9">
+                        <barButtonItem key="rightBarButtonItem" title="清除掃描結果" id="wSi-qs-9j9">
                             <connections>
                                 <action selector="removeQRCode:" destination="fdw-oc-cSm" id="g4R-dE-b6b"/>
                             </connections>
