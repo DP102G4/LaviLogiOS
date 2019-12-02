@@ -6,14 +6,16 @@
 //  Copyright © 2019 張哲禎. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class Friend {
-    var image: UIImage
-    var name: String
-    
-    init(image: UIImage, name: String) {
-        self.image = image
-        self.name = name
+struct Friend {
+    var imagePath: String?
+    var name: String?
+}
+
+extension Friend {
+    init(dic: [String: Any]) {
+        imagePath = dic["imagePath"] as? String ?? ""
+        name = dic["name"] as? String ?? ""
     }
 }

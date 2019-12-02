@@ -130,36 +130,46 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-G6-SSy">
-                                <rect key="frame" x="0.0" y="176" width="414" height="720"/>
+                                <rect key="frame" x="0.0" y="188" width="414" height="708"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="105" id="V2z-64-cWP" customClass="FriendCell" customModule="LaviLog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="105"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="100" id="V2z-64-cWP" customClass="FriendCell" customModule="LaviLog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V2z-64-cWP" id="kuh-Yp-hlm">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w3G-yw-aW1">
-                                                    <rect key="frame" x="31" y="21" width="70" height="63"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iu.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="w3G-yw-aW1">
+                                                    <rect key="frame" x="34" y="10" width="80" height="80"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="yrl-af-2Ph"/>
+                                                        <constraint firstAttribute="width" secondItem="w3G-yw-aW1" secondAttribute="height" multiplier="1:1" id="NKY-U8-ysS"/>
+                                                        <constraint firstAttribute="width" constant="80" id="tVl-FX-BqM"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="40"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrd-WI-6yY">
-                                                    <rect key="frame" x="132" y="41" width="45" height="20.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="144" y="40" width="100" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="tb9-cV-wch"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="w3G-yw-aW1" firstAttribute="leading" secondItem="kuh-Yp-hlm" secondAttribute="leadingMargin" constant="11" id="2X8-hu-X5N"/>
-                                                <constraint firstItem="w3G-yw-aW1" firstAttribute="top" secondItem="kuh-Yp-hlm" secondAttribute="topMargin" constant="10" id="FZQ-0O-7Ch"/>
-                                                <constraint firstItem="w3G-yw-aW1" firstAttribute="centerY" secondItem="kuh-Yp-hlm" secondAttribute="centerY" id="NMI-fR-zaD"/>
-                                                <constraint firstItem="Qrd-WI-6yY" firstAttribute="top" secondItem="kuh-Yp-hlm" secondAttribute="topMargin" constant="30" id="fiU-h6-wjb"/>
-                                                <constraint firstItem="Qrd-WI-6yY" firstAttribute="leading" secondItem="w3G-yw-aW1" secondAttribute="trailing" constant="31" id="nqZ-zj-4qK"/>
+                                                <constraint firstItem="w3G-yw-aW1" firstAttribute="centerY" secondItem="Qrd-WI-6yY" secondAttribute="centerY" id="4eT-MC-FGO"/>
+                                                <constraint firstItem="Qrd-WI-6yY" firstAttribute="leading" secondItem="w3G-yw-aW1" secondAttribute="trailing" constant="30" id="b25-9U-ZrN"/>
+                                                <constraint firstItem="Qrd-WI-6yY" firstAttribute="top" secondItem="kuh-Yp-hlm" secondAttribute="topMargin" constant="29" id="hZn-IJ-cFL"/>
+                                                <constraint firstItem="w3G-yw-aW1" firstAttribute="top" secondItem="kuh-Yp-hlm" secondAttribute="topMargin" constant="-1" id="kYy-lX-Zhg"/>
+                                                <constraint firstItem="w3G-yw-aW1" firstAttribute="centerY" secondItem="kuh-Yp-hlm" secondAttribute="centerY" id="n1A-Dv-2Ld"/>
+                                                <constraint firstItem="w3G-yw-aW1" firstAttribute="leading" secondItem="kuh-Yp-hlm" secondAttribute="leadingMargin" constant="14" id="vbi-7r-cfo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -195,17 +205,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ahb-Cv-hCd">
-                                <rect key="frame" x="157" y="183" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82k-3Z-zRA">
-                                <rect key="frame" x="20" y="324" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0n3-An-dO0">
                                 <rect key="frame" x="20" y="418" width="374" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -218,6 +217,22 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iu.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="ahb-Cv-hCd">
+                                <rect key="frame" x="147" y="220" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82k-3Z-zRA">
+                                <rect key="frame" x="20" y="360" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ifA-Fg-0yy"/>

@@ -2,8 +2,8 @@
 //  QRCodeViewController.swift
 //  QRcodeOpen
 //
-//  Created by uic_MacBook on 2019/11/8.
-//  Copyright © 2019 uic_MacBook. All rights reserved.
+//  Created by 田乙男 on 2019/11/25.
+//  Copyright © 2019 張哲禎. All rights reserved.
 //
 
 import UIKit

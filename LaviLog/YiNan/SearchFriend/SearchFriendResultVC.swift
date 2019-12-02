@@ -14,14 +14,18 @@ class SearchFriendResultVC: UIViewController {
     @IBOutlet weak var lbFriend: UILabel!
     
     var friend: Friend!
+    var images = [String: UIImage]()
+    
+    //var imagePaths = [String]()
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        ivFriend.image = friend.image
+        let image = images[friend!.imagePath!]
+        ivFriend.image = image
         lbFriend.text = friend.name
     }
     
