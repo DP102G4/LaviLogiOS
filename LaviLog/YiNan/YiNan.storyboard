@@ -57,7 +57,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="6U8-ia-dAV" kind="show" id="5Sk-0z-wbu"/>
+                                    <segue destination="ZeT-we-Vkq" kind="show" id="hTd-um-pA4"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iu.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="sa2-FG-M9b">
@@ -310,20 +310,87 @@
             <point key="canvasLocation" x="333" y="982"/>
         </scene>
         <!--通知-->
-        <scene sceneID="oYr-YI-0oo">
+        <scene sceneID="MUZ-G1-oU3">
             <objects>
-                <viewController id="6U8-ia-dAV" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="v7B-w0-a9K">
+                <tableViewController id="ZeT-we-Vkq" customClass="NoticeTVC" customModule="LaviLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uVj-7i-qRf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="uTQ-oc-rcl"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="通知" id="Mq9-L9-HFY"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Iu-Ww-Pwk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoticeCell" rowHeight="100" id="HVa-LX-f4J" customClass="NoticeCell" customModule="LaviLog" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HVa-LX-f4J" id="qDZ-Gc-4fQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iu.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="pBA-kL-B5Q">
+                                            <rect key="frame" x="34" y="10" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="IKd-tQ-dpR"/>
+                                                <constraint firstAttribute="width" secondItem="pBA-kL-B5Q" secondAttribute="height" multiplier="1:1" id="Ms7-pO-mie"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="40"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLW-0c-8fB">
+                                            <rect key="frame" x="144" y="40" width="85" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="85" id="bA1-mP-OwL"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esj-ix-IBM">
+                                            <rect key="frame" x="237" y="40" width="157" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwX-30-Bfc">
+                                            <rect key="frame" x="237" y="65" width="157" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pBA-kL-B5Q" firstAttribute="leading" secondItem="qDZ-Gc-4fQ" secondAttribute="leadingMargin" constant="14" id="8iw-DB-tgV"/>
+                                        <constraint firstItem="YwX-30-Bfc" firstAttribute="top" secondItem="Esj-ix-IBM" secondAttribute="bottom" constant="1" id="DGr-5b-pXU"/>
+                                        <constraint firstItem="Esj-ix-IBM" firstAttribute="trailing" secondItem="qDZ-Gc-4fQ" secondAttribute="trailingMargin" id="IfE-RM-v5U"/>
+                                        <constraint firstItem="pBA-kL-B5Q" firstAttribute="top" secondItem="qDZ-Gc-4fQ" secondAttribute="topMargin" constant="-1" id="PAI-xh-W9z"/>
+                                        <constraint firstItem="WLW-0c-8fB" firstAttribute="baseline" secondItem="Esj-ix-IBM" secondAttribute="baseline" id="Xlo-C9-Way"/>
+                                        <constraint firstItem="WLW-0c-8fB" firstAttribute="leading" secondItem="pBA-kL-B5Q" secondAttribute="trailing" constant="30" id="bmi-tG-d6V"/>
+                                        <constraint firstItem="Esj-ix-IBM" firstAttribute="leading" secondItem="WLW-0c-8fB" secondAttribute="trailing" constant="8" id="dke-R7-eKQ"/>
+                                        <constraint firstItem="Esj-ix-IBM" firstAttribute="leading" secondItem="YwX-30-Bfc" secondAttribute="leading" id="hzC-wJ-X2O"/>
+                                        <constraint firstItem="pBA-kL-B5Q" firstAttribute="centerY" secondItem="qDZ-Gc-4fQ" secondAttribute="centerY" id="lDp-DL-l93"/>
+                                        <constraint firstItem="Esj-ix-IBM" firstAttribute="trailing" secondItem="YwX-30-Bfc" secondAttribute="trailing" id="lKV-ja-oxM"/>
+                                        <constraint firstItem="YwX-30-Bfc" firstAttribute="bottom" secondItem="qDZ-Gc-4fQ" secondAttribute="bottomMargin" id="v6n-6M-1Fh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ivNotice" destination="pBA-kL-B5Q" id="X5M-eT-YOh"/>
+                                    <outlet property="lbM" destination="WLW-0c-8fB" id="rU5-gz-6oZ"/>
+                                    <outlet property="lbM2" destination="Esj-ix-IBM" id="61y-ZN-XDh"/>
+                                    <outlet property="lbTime" destination="YwX-30-Bfc" id="MqH-Yy-cDV"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZeT-we-Vkq" id="uGm-cp-2W6"/>
+                            <outlet property="delegate" destination="ZeT-we-Vkq" id="nRF-6z-GUF"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="通知" id="At2-H1-Oyh"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U1o-JV-GN1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1883" y="1218"/>
+            <point key="canvasLocation" x="2573.913043478261" y="1216.7410714285713"/>
         </scene>
         <!--QRCode-->
         <scene sceneID="Zrb-lJ-iOv">
