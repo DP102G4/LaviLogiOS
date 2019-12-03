@@ -10,9 +10,11 @@ import Firebase
 
 class NoticeTVC: UITableViewController {
     
+    var images = [String: UIImage]()
     var notices = [Notice]()
     
     func getNotice() {
+        var imagePaths = [String]()
         let db = Firestore.firestore()
         //        db.collection("songs").getDocuments { (querySnapshot, error) in
         // descending: true // true 降冪 大到小 原本默認 // false 升冪 小到大
@@ -26,6 +28,27 @@ class NoticeTVC: UITableViewController {
             }
             
             self.tableView.reloadData()
+            
+            for snapshot in querySnapshot.documents {
+                imagePaths.append(snapshot.data()["nImagePath"] as! String)
+                print("path",imagePaths)
+                
+                for nImagePath in imagePaths {
+                    let fileReference = Storage.storage().reference().child("\(nImagePath)")
+                    print("filepath",fileReference)
+                    fileReference.getData(maxSize: .max) { (data, error) in
+                        if let data = data, let image = UIImage(data: data) {
+                            self.images[nImagePath] = image
+                            print("imagePath",nImagePath)
+                            print("self.images",self.images)
+                        }else {
+                            print(error?.localizedDescription)
+                        }
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+            
         }
     }
     
@@ -48,12 +71,18 @@ class NoticeTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoticeCell", for: indexPath) as! NoticeCell
         
         // Configure the cell...
-        let notice = notices[indexPath.row]
-        cell.lbM.text = notice.noticeMessage
-        cell.lbM2.text = notice.noticeMessage2
-        cell.lbTime.text = notice.noticeTime
         
+        var notice: Notice?
+        print("a:",images)
+        notice = notices[indexPath.row]
+        cell.lbM.text = notice?.noticeMessage
+        cell.lbM2.text = notice?.noticeMessage2
+        cell.lbTime.text = notice?.noticeTime
         
+        let image = images[notice!.nImagePath!]
+        cell.ivNotice.image = image
+        
+        print("b:",images)
         return cell
     }
     

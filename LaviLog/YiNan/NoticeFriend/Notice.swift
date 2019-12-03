@@ -18,7 +18,7 @@ struct Notice {
 extension Notice {
     init(dic: [String: Any]) {
         account = dic["account"] as? String ?? ""
-        nImagePath = dic["nimagePath"] as? String ?? ""
+        nImagePath = dic["nImagePath"] as? String ?? ""
         noticeMessage = dic["noticeMessage"] as? String ?? ""
         noticeMessage2 = dic["noticeMessage2"] as? String ?? ""
         noticeTime = dic["noticeTime"] as? String ?? ""

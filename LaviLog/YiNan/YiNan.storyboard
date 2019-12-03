@@ -374,7 +374,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="ivNotice" destination="pBA-kL-B5Q" id="X5M-eT-YOh"/>
+                                    <outlet property="ivNotice" destination="pBA-kL-B5Q" id="bfX-PH-DUL"/>
                                     <outlet property="lbM" destination="WLW-0c-8fB" id="rU5-gz-6oZ"/>
                                     <outlet property="lbM2" destination="Esj-ix-IBM" id="61y-ZN-XDh"/>
                                     <outlet property="lbTime" destination="YwX-30-Bfc" id="MqH-Yy-cDV"/>
