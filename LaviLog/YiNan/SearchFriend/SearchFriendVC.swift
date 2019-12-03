@@ -117,7 +117,10 @@ extension SearchFriendVC: UITableViewDataSource, UITableViewDelegate {
         let searchFriendResultVC = self.storyboard?.instantiateViewController(withIdentifier: "searchFriendResultVC") as! SearchFriendResultVC
         let friend = friends[indexPath.row]
         searchFriendResultVC.friend = friend
+        searchFriendResultVC.images = images
         self.navigationController?.pushViewController(searchFriendResultVC, animated: true)
+        
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     /* 設定可否編輯資料列 */

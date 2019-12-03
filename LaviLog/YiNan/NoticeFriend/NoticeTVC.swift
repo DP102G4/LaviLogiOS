@@ -73,7 +73,7 @@ class NoticeTVC: UITableViewController {
         // Configure the cell...
         
         var notice: Notice?
-        print("a:",images)
+        
         notice = notices[indexPath.row]
         cell.lbM.text = notice?.noticeMessage
         cell.lbM2.text = notice?.noticeMessage2
@@ -82,8 +82,11 @@ class NoticeTVC: UITableViewController {
         let image = images[notice!.nImagePath!]
         cell.ivNotice.image = image
         
-        print("b:",images)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      tableView.deselectRow(at: indexPath, animated: false)
     }
     
     
@@ -131,5 +134,27 @@ class NoticeTVC: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+    /* 設定可否編輯資料列 */
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        //         if indexPath.row == 1{
+        //             return false
+        //         }
+        //         //使第二個資料無法修改
+        
+        return true
+    }
+    
+    /* 修改確定後，判斷編輯模式並作出回應 */
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // 按下Delete按鈕
+        if editingStyle == .delete {
+            notices.remove(at: indexPath.row)
+            /* 提供array，儲存著欲刪除資料的indexPath。如果只刪除一筆資料，array內存放一個indexPath元素即可 */
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+
     
 }

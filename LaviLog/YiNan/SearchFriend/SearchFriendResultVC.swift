@@ -24,8 +24,9 @@ class SearchFriendResultVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let image = images[friend!.imagePath!]
-        ivFriend.image = image
+        //let image = images[friend!.imagePath!]
+        print("圖片圖片=",images[friend.imagePath!])
+        ivFriend.image = images[friend.imagePath!]
         lbFriend.text = friend.name
     }
     

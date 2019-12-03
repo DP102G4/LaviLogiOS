@@ -19,6 +19,15 @@ class NoticeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        //標籤圓角
+//        lbM.layer.cornerRadius = 12
+//        lbM.layer.masksToBounds = true
+        
+//        lbM2.layer.cornerRadius = 12
+//        lbM2.layer.masksToBounds = true
+        // cell 圓角
+        self.layer.cornerRadius = 50
+        self.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
